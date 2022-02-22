@@ -918,7 +918,7 @@ class CDRomImpl : public PCSX::CDRom {
             case CdlID + 0x100:
                 SetResultSize(8);
 
-                 if (!m_iso.isActive()) {
+                if (!m_iso.isActive()) {
                     m_result[0] = 0x08;
                     m_result[1] = 0x40;
                     memset((char *)&m_result[2], 0, 6);
@@ -1294,7 +1294,7 @@ class CDRomImpl : public PCSX::CDRom {
         } else {
             CDROM_IO_LOG("CD1 write: %x (%s)", rt, magic_enum::enum_names<Commands>()[rt]);
         }
-   
+
         if (m_paramC) {
             CDROM_IO_LOG(" Param[%d] = {", m_paramC);
             for (i = 0; i < m_paramC; i++) CDROM_IO_LOG(" %x,", m_param[i]);
